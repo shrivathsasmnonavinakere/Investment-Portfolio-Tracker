@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Investment Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>My Investment Tracker</h1>
+
+    <div class="summary-box" id="summaryBox"></div>
+
+    <div class="form-box">
+        <input type="text" id="name" placeholder="Investment name (e.g. TCS)">
+        <select id="type">
+            <option value="Stock">Stock</option>
+            <option value="Mutual Fund">Mutual Fund</option>
+            <option value="Fixed Deposit">Fixed Deposit</option>
+        </select>
+        <input type="number" id="quantity" placeholder="Quantity">
+        <input type="number" id="buyPrice" placeholder="Buy Price">
+        <input type="number" id="currentPrice" placeholder="Current Price">
+        <button onclick="addInvestment()">Add Investment</button>
+    </div>
+
+    <div class="filter-box">
+        <label>Filter by type: </label>
+        <select id="filterType" onchange="loadInvestments()">
+            <option value="">All</option>
+            <option value="Stock">Stock</option>
+            <option value="Mutual Fund">Mutual Fund</option>
+            <option value="Fixed Deposit">Fixed Deposit</option>
+        </select>
+    </div>
+
+    <table id="investmentTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Quantity</th>
+                <th>Buy Price</th>
+                <th>Current Price</th>
+                <th>Profit / Loss</th>
+                <th>Profit / Loss %</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
